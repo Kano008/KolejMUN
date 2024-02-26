@@ -3,11 +3,7 @@ body {
     font-family: "PT Serif", bold;
     margin: 0;
     padding: 0;
-    background-image: url('background.png'); /* Arka plan fotoğrafı */
-    background-size: cover; /* Fotoğrafı tam ekran boyutunda ayarla */
-    background-repeat: no-repeat; /* Fotoğrafın tekrar etmesini önle */
-    background-attachment: fixed; /* Fotoğrafın sabit kalmasını sağla */
-    background-position: center; /* Fotoğrafın ortalanmasını sağla */
+
 }
 
 
@@ -216,4 +212,22 @@ nav ul li:hover .submenu {
     margin: 20px auto; /* Orta hizalama ve dış kenar boşluğu */
     
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+}
+
+#school-image {
+    padding: 20px;
+    text-align: center;
+    color: #000000; /* Yazı rengi */
+    background-color: #f9f9f9; /* Arka plan rengi */
+    border-radius: 10px; /* Kenar yarıçapı */
+    margin: 20px auto; /* Orta hizalama ve dış kenar boşluğu */
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+}
+
+/* Genel stiller */
+
+#school-image img {
+    max-width: 70%; /* Resmin en fazla genişliği ekran genişliği kadar olacak */
+    height: auto; /* Otomatik yükseklik ayarı, oranı koruyacak şekilde ayarlar */
 }
