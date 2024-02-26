@@ -3,7 +3,13 @@ body {
     font-family: "PT Serif", bold;
     margin: 0;
     padding: 0;
+    background-image: url('background.jpg'); /* Arka plan fotoğrafı */
+    background-size: cover; /* Fotoğrafı tam ekran boyutunda ayarla */
+    background-repeat: no-repeat; /* Fotoğrafın tekrar etmesini önle */
+    background-attachment: fixed; /* Fotoğrafın sabit kalmasını sağla */
+    background-position: center; /* Fotoğrafın ortalanmasını sağla */
 }
+
 
 header {
     background-color: #ffffff;
