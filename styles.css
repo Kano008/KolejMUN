@@ -201,3 +201,13 @@ nav ul li:hover .submenu {
     /* Diğer stil özellikleri buraya eklenebilir */
     color:#000000;
 }
+#registration {
+    padding: 20px;
+    text-align: center;
+    color: #000000; /* Yazı rengi */
+    background-color: #f9f9f9; /* Arka plan rengi */
+    border-radius: 10px; /* Kenar yarıçapı */
+    margin: 20px auto; /* Orta hizalama ve dış kenar boşluğu */
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+}
