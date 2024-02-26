@@ -9,35 +9,6 @@
         body {
             background-color: #eeeeee; 
         }
-        #slideshow-container {
-            width: 100%;
-            height: 85vh; 
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative; /* Relative position for absolute positioning */
-        }
-
-        #slideshow {
-            width: 100%; /* Kutucuğun genişliği */
-            height: 100%; /* Kutucuğun yüksekliği */
-            border: 0px solid #ccc; /* isteğe bağlı: kutucuk kenarlığı */
-            position: relative;
-        }
-
-        #slideshow img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* görüntüyü kutucuğa sığdırmak için */
-            opacity: 1; /* Başlangıçta tamamen görünür */
-            transition: opacity 0.5s ease-in-out; /* Geçiş efekti */
-            position: absolute; /* Resimlerin üst üste gelmesini sağlar */
-            top: 0;
-            left: 0;
-        }
-
         #logo {
             width: 70px; /* İstediğiniz boyuta ayarlayın */
             height: auto; /* Otomatik yükseklik */
@@ -97,21 +68,6 @@
         #contact ul li {
             margin-bottom: 10px;
         }
-        #buttons {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        button {
-            margin: 0 10px; /* Butonlar arasındaki boşluk */
-            padding: 10px 20px;
-            background-color: #000000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            color: #fff;
-        }
         #contact {
         padding: 20px;
         text-align: center;
@@ -154,43 +110,6 @@
     </header>
     
     <main>
-        <div id="slideshow-container">
-            <div id="slideshow">
-                <img src="image1.jpg" alt="Image 1">
-                <img src="image2.jpg" alt="Image 2">
-                <!-- İstediğiniz kadar resmi buraya ekleyin -->
-            </div>
-            <div id="buttons">
-                <button onclick="prevImage()"><</button>
-                <button onclick="nextImage()">></button>
-            </div>
-        </div>
-        <div id="countdown-container" class="container">
-            <h2 class="countdown-title">Countdown</h2>
-            <div id="countdown" class="align-container">
-                <div class="countdown-item">
-                    <div id="days" class="countdown-value"></div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-item">
-                    <div id="hours" class="countdown-value"></div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-item">
-                    <div id="minutes" class="countdown-value"></div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-item">
-                    <div id="seconds" class="countdown-value"></div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
-        </div>
-    
-        <div id="about" class="align-container">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla nec lorem consequat vehicula ut nec urna. Proin sit amet convallis ex. Ut varius libero nec orci sollicitudin, at condimentum lorem fermentum. Nunc molestie nunc eget odio feugiat, sed lobortis nisi rutrum. Duis nec velit vel sapien gravida feugiat. Vestibulum sit amet magna fermentum, blandit nulla vel, placerat lorem. Sed sed mauris ut ipsum rutrum rhoncus id id purus. Phasellus tempor turpis eu risus congue, vel malesuada ante consectetur. Nulla facilisi.</p>
-        </div>
         <div id="contact" class="align-container">
             <h2>Contact</h2>
             <ul>
