@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KolejMUN - Offical Site</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        body {
+            background-color: #eeeeee; 
+        }
+        #logo {
+            width: 70px; /* İstediğiniz boyuta ayarlayın */
+            height: auto; /* Otomatik yükseklik */
+            display: inline-block; /* Diğer öğelerle aynı satırda olmasını sağlar */
+            margin-right: 20px; /* Logo ile menü arasındaki boşluk */
+        }
+        #header-container {
+            display: flex;
+            justify-content: space-between; /* Logo ve menü arasındaki boşluk */
+            align-items: center;
+            padding: 10px 20px; /* Örnek bir dolgu */
+        }
+        #logo-container {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            justify-content: flex-start; /* Menü öğelerini sola yasla */
+        }
+        nav ul li {
+            margin-right: 20px; /* Öğeler arasındaki boşluk */
+            border-radius: 1rem; /* Kenar yarıçapı */
+            background-color: #ffffff; /* Arka plan rengi */
+            padding: 5px 10px; /* Örnek bir dolgu */
+        }
+        nav ul li a {
+            color: #333; /* Yazı rengi */
+            text-decoration: none; /* Altçizgi kaldırma */
+            font-weight: bold; /* Kalın font */
+            font-size: 20px;
+        }
+        footer {
+            background-color: #333; /* Footer arka plan rengi */
+            color: #fff; /* Yazı rengi */
+            text-align: center;
+            padding: 20px 0; /* Footer içeriğinin padding'i */
+        }
+        #about {
+            padding: 20px;
+            text-align: center;
+            color: #000000; /* Yazı rengi */
+        }
+        #contact {
+            padding: 20px;
+            text-align: center;
+            color: #000000; /* Yazı rengi */
+        }
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        #contact ul li {
+            margin-bottom: 10px;
+        }
+        #contact {
+        padding: 20px;
+        text-align: center;
+        color: #000000; /* Yazı rengi */
+        }
+
+        #contact a {
+        color: rgb(4, 0, 255); /* Link rengi */
+        text-decoration: underline; /* Altçizgi ekleme */
+        font-weight: bold; /* Kalın font */
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-container">
+            <div id="logo-container">
+                <img id="logo" src="logo.png" alt="KolejMUN Logo"> <!-- Logo ekleniyor -->
+                <span id="logo-text">KolejMUN</span> <!-- Metin ekleniyor -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a >KolejMUN</a>
+                        <ul class="submenu">
+                            <li><a href="kolejmun24.html">KolejMUN'24</a></li>
+                            <li><a href="kolejmun23.html">KolejMUN'23</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li><a href="https://atam.gov.tr/">ATAM</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+    
+    <main>
+        <div id="contact" class="align-container">
+            <h2>Contact</h2>
+            <ul>
+                <p>Email: <a href="mailto:info@kolejmun.com">info@kolejmun.com</a></p>
+                <li>Address: Fevzi Çakmak Mahallesi Gaziethempaşa Bulvarı Samsun Anadolu Lisesi Blok No 14 İlkadım/Samsun</li>
+                <p><img src="instalogo.png" alt="Instagram Logo" style="width: 20px; vertical-align: middle;"> İnstagram: <a href="https://www.instagram.com/kolejmun/">@kolejmun</a></p>
+            </ul>
+        </div>
+    </main>
+    
+    
+    <footer>
+        &copy; 2024 KolejMUN. All Rights Reserved.
+    </footer>
+
+    <script>
+    // Hedef tarih
+        const targetDate = new Date("2024-10-1").getTime();
+        let countdownInterval; // Global değişken olarak tanımlıyoruz
+
+// Her saniyede bir geri sayımı güncelleyen fonksiyon
+        const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+    // Zamanı hesapla
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // HTML içeriğini güncelle
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+
+    // Zaman dolana kadar her saniye güncelle
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("countdown").innerHTML = "<h2>Countdown</h2><div>EXPIRED</div>";
+        }
+        };
+
+// Başlangıçta geri sayımı güncelle
+        updateCountdown();
+
+// Her saniyede bir geri sayımı güncelle (1000 milisaniye = 1 saniye)
+        countdownInterval = setInterval(updateCountdown, 1000); // Global değişkeni tanımlıyoruz
+
+
+        // Resimlerin listesi
+        const images = document.getElementById("slideshow").getElementsByTagName("img");
+        let index = 0; // Mevcut resim indeksi
+
+        // Resimleri gösteren fonksiyon
+        function showImage() {
+            images[index].style.opacity = 0; // Önceki resmi soluklaştır
+            index = (index + 1) % images.length;
+            images[index].style.opacity = 1; // Sıradaki resmi göster
+        }
+
+        // Önceki resmi gösteren fonksiyon
+        function prevImage() {
+            images[index].style.opacity = 0; // Mevcut resmi soluklaştır
+            index = (index - 1 + images.length) % images.length; // İndeksi bir önceki resme döndür
+            images[index].style.opacity = 1; // Önceki resmi göster
+        }
+
+        // Sonraki resmi gösteren fonksiyon
+        function nextImage() {
+            images[index].style.opacity = 0; // Mevcut resmi soluklaştır
+            index = (index + 1) % images.length; // İndeksi bir sonraki resme taşı
+            images[index].style.opacity = 1; // Sonraki resmi göster
+        }
+
+        // Belirli aralıklarla resimleri değiştir
+        setInterval(showImage, 8000); // 5 saniyede bir resim değişecek (5000 milisaniye)
+    </script>
+</body>
+</html>
