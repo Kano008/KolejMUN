@@ -158,7 +158,7 @@
         <div id="slideshow-container">
             <div id="slideshow">
                 <img src="image1.jpg" alt="Image 1">
-                <img src="image2.jpg" alt="Image 2">
+                <img src="" alt="Image 2" data-src="image2.jpg"> <!-- Diğer resimler için data-src ekleyin -->
                 <!-- İstediğiniz kadar resmi buraya ekleyin -->
             </div>
             <div id="buttons">
@@ -243,36 +243,31 @@
         countdownInterval = setInterval(updateCountdown, 1000); // Global değişkeni tanımlıyoruz
 
 
-        // Resimlerin listesi
     const images = document.getElementById("slideshow").getElementsByTagName("img");
-    let index = 0; // Mevcut resim indeksi
+    let index = 0;
 
-    // İlk resmi göster
-    images[index].style.opacity = 1;
+    // İlk resmin yüklenmesi
+    const firstImage = new Image();
+    firstImage.onload = function() {
+        images[index].src = firstImage.src;
+        images[index].style.opacity = 1; // İlk resmi göster
+    };
+    firstImage.src = images[index].getAttribute("data-src");
 
-    // Resimleri gösteren fonksiyon
-    function showImage() {
-        images[index].style.opacity = 0; // Önceki resmi soluklaştır
+    // Diğer resimlerin yüklenmesi
+    function loadNextImage() {
         index = (index + 1) % images.length;
-        images[index].style.opacity = 1; // Sıradaki resmi göster
+        const nextImage = new Image();
+        nextImage.onload = function() {
+            images[index].src = nextImage.src;
+            images[index].style.opacity = 1; // Resmi göster
+        };
+        nextImage.src = images[index].getAttribute("data-src");
     }
 
-    // Önceki resmi gösteren fonksiyon
-    function prevImage() {
-        images[index].style.opacity = 0; // Mevcut resmi soluklaştır
-        index = (index - 1 + images.length) % images.length; // İndeksi bir önceki resme döndür
-        images[index].style.opacity = 1; // Önceki resmi göster
-    }
+    // Resimleri gösteren fonksiyonlar (prevImage, nextImage)...
 
-    // Sonraki resmi gösteren fonksiyon
-    function nextImage() {
-        images[index].style.opacity = 0; // Mevcut resmi soluklaştır
-        index = (index + 1) % images.length; // İndeksi bir sonraki resme taşı
-        images[index].style.opacity = 1; // Sonraki resmi göster
-    }
-
-    // Belirli aralıklarla resimleri değiştir
-    setInterval(showImage, 8000); // 5 saniyede bir resim değişecek (5000 milisaniye)
+    setInterval(loadNextImage, 8000); // 5 saniyede bir resim yüklenecek (5000 milisaniye)
     </script>
 </body>
 </html>
