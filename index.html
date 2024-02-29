@@ -244,32 +244,35 @@
 
 
         // Resimlerin listesi
-        const images = document.getElementById("slideshow").getElementsByTagName("img");
-        let index = 0; // Mevcut resim indeksi
+    const images = document.getElementById("slideshow").getElementsByTagName("img");
+    let index = 0; // Mevcut resim indeksi
 
-        // Resimleri gösteren fonksiyon
-        function showImage() {
-            images[index].style.opacity = 0; // Önceki resmi soluklaştır
-            index = (index + 1) % images.length;
-            images[index].style.opacity = 1; // Sıradaki resmi göster
-        }
+    // İlk resmi göster
+    images[index].style.opacity = 1;
 
-        // Önceki resmi gösteren fonksiyon
-        function prevImage() {
-            images[index].style.opacity = 0; // Mevcut resmi soluklaştır
-            index = (index - 1 + images.length) % images.length; // İndeksi bir önceki resme döndür
-            images[index].style.opacity = 1; // Önceki resmi göster
-        }
+    // Resimleri gösteren fonksiyon
+    function showImage() {
+        images[index].style.opacity = 0; // Önceki resmi soluklaştır
+        index = (index + 1) % images.length;
+        images[index].style.opacity = 1; // Sıradaki resmi göster
+    }
 
-        // Sonraki resmi gösteren fonksiyon
-        function nextImage() {
-            images[index].style.opacity = 0; // Mevcut resmi soluklaştır
-            index = (index + 1) % images.length; // İndeksi bir sonraki resme taşı
-            images[index].style.opacity = 1; // Sonraki resmi göster
-        }
+    // Önceki resmi gösteren fonksiyon
+    function prevImage() {
+        images[index].style.opacity = 0; // Mevcut resmi soluklaştır
+        index = (index - 1 + images.length) % images.length; // İndeksi bir önceki resme döndür
+        images[index].style.opacity = 1; // Önceki resmi göster
+    }
 
-        // Belirli aralıklarla resimleri değiştir
-        setInterval(showImage, 8000); // 5 saniyede bir resim değişecek (5000 milisaniye)
+    // Sonraki resmi gösteren fonksiyon
+    function nextImage() {
+        images[index].style.opacity = 0; // Mevcut resmi soluklaştır
+        index = (index + 1) % images.length; // İndeksi bir sonraki resme taşı
+        images[index].style.opacity = 1; // Sonraki resmi göster
+    }
+
+    // Belirli aralıklarla resimleri değiştir
+    setInterval(showImage, 8000); // 5 saniyede bir resim değişecek (5000 milisaniye)
     </script>
 </body>
 </html>
