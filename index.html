@@ -243,31 +243,31 @@
         countdownInterval = setInterval(updateCountdown, 1000); // Global değişkeni tanımlıyoruz
 
 
-    const images = document.getElementById("slideshow").getElementsByTagName("img");
-    let index = 0;
+        const images = document.getElementById("slideshow").getElementsByTagName("img");
+        let index = 0;
 
     // İlk resmin yüklenmesi
-    const firstImage = new Image();
-    firstImage.onload = function() {
-        images[index].src = firstImage.src;
-        images[index].style.opacity = 1; // İlk resmi göster
-    };
-    firstImage.src = images[index].getAttribute("data-src");
+        const firstImage = new Image();
+        firstImage.onload = function() {
+            images[index].src = firstImage.src;
+            images[index].style.opacity = 1; // İlk resmi göster
+        };
+        firstImage.src = images[index].getAttribute("data-src");
 
     // Diğer resimlerin yüklenmesi
-    function loadNextImage() {
-        index = (index + 1) % images.length;
-        const nextImage = new Image();
-        nextImage.onload = function() {
-            images[index].src = nextImage.src;
-            images[index].style.opacity = 1; // Resmi göster
-        };
-        nextImage.src = images[index].getAttribute("data-src");
-    }
+        function loadNextImage() {
+            index = (index + 1) % images.length;
+            const nextImage = new Image();
+            nextImage.onload = function() {
+                images[index].src = nextImage.src;
+                images[index].style.opacity = 1; // Resmi göster
+            };
+            nextImage.src = images[index].getAttribute("data-src");
+        }
 
     // Resimleri gösteren fonksiyonlar (prevImage, nextImage)...
 
-    setInterval(loadNextImage, 8000); // 5 saniyede bir resim yüklenecek (5000 milisaniye)
+        setInterval(loadNextImage, 8000); // 5 saniyede bir resim yüklenecek (5000 milisaniye)
     </script>
 </body>
 </html>
